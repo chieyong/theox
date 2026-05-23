@@ -1,4 +1,4 @@
-const CACHE = 'stille-os-v7';
+const CACHE = 'stille-os-v8';
 
 const PRECACHE = [
   './',
