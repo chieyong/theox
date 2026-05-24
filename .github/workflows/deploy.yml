@@ -6,6 +6,9 @@ on:
       - main
       - dev
 
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
@@ -21,6 +24,7 @@ jobs:
           password: ${{ secrets.FTP_PASSWORD }}
           server-dir: ${{ secrets.FTP_DIR }}
           protocol: ftps
+          passive: true
 
       - name: Upload via FTP (dev)
         if: github.ref == 'refs/heads/dev'
@@ -31,3 +35,4 @@ jobs:
           password: ${{ secrets.FTP_PASSWORD }}
           server-dir: ${{ secrets.FTP_DIR_DEV }}
           protocol: ftps
+          passive: true
