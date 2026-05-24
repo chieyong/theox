@@ -15,9 +15,10 @@
 
 <a class="site-link" href="index.html">← Terug</a>
 
-<audio id="bg-music" src="./audio/Ithaca%20Suite_%20IV.%20Penelopeia.mp3" loop preload="auto"></audio>
+<audio id="bg-music" src="./audio/Max%20Richter%20-%20Of%20Rememberance.mp3" loop preload="auto"></audio>
 
 <button class="music-btn" id="music-btn" aria-label="Muziek aan/uit">♪</button>
+<span class="music-hint" id="music-hint">tik voor muziek</span>
 
 <div class="progress-bar" id="progress"></div>
 
@@ -325,18 +326,23 @@
 <script>
   const music = document.getElementById('bg-music');
   const btn = document.getElementById('music-btn');
+  const hint = document.getElementById('music-hint');
   music.volume = 0.15;
+
+  function hideHint() { if (hint) hint.style.display = 'none'; }
 
   let started = false;
   function startMusic() {
     if (started) return;
     started = true;
+    hideHint();
     music.play().catch(() => {});
     window.removeEventListener('scroll', startMusic);
   }
   window.addEventListener('scroll', startMusic, { passive: true });
 
   btn.addEventListener('click', () => {
+    hideHint();
     if (music.paused) {
       music.play().catch(() => {});
       btn.classList.remove('muted');

@@ -354,6 +354,28 @@ body {
   text-decoration: line-through;
 }
 
+.music-hint {
+  position: fixed;
+  top: 1.25rem;
+  right: 3.2rem;
+  z-index: 200;
+  font-family: var(--font-head);
+  font-size: 0.65rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--ink-muted);
+  white-space: nowrap;
+  pointer-events: none;
+  animation: music-hint-fade 4.5s ease forwards;
+}
+
+@keyframes music-hint-fade {
+  0%   { opacity: 0; }
+  10%  { opacity: 0.65; }
+  75%  { opacity: 0.65; }
+  100% { opacity: 0; }
+}
+
 /* ─── RESPONSIVE ─── */
 @media (max-width: 600px) {
   html { font-size: 16px; }

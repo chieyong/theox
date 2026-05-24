@@ -89,7 +89,7 @@
     }
 
     .story-card--soon {
-      opacity: 0.38;
+      opacity: 0.6;
       cursor: default;
       pointer-events: none;
     }
@@ -151,11 +151,10 @@
 
     .card-soon-label {
       margin-top: 2rem;
-      font-family: var(--font-head);
-      font-size: 0.68rem;
-      letter-spacing: 0.35em;
-      text-transform: uppercase;
-      color: var(--ink-muted);
+      font-family: var(--font-body);
+      font-size: 0.8rem;
+      letter-spacing: 0.08em;
+      color: var(--ink);
     }
 
     /* ─── FOOTER LINK ─── */
@@ -223,13 +222,13 @@
       </div>
     </a>
 
-    <div class="story-card story-card--soon">
+    <a id="deel-2-card" class="story-card story-card--soon" aria-disabled="true">
       <div class="card-content">
         <p class="card-deel">Deel II</p>
         <h2 class="card-title">Schaduw van het Licht</h2>
-        <p class="card-soon-label">Binnenkort</p>
+        <p class="card-soon-label" id="deel-2-label">27 mei · 10:00</p>
       </div>
-    </div>
+    </a>
 
     <div class="story-card story-card--soon">
       <div class="card-content">
@@ -266,6 +265,26 @@
       navigator.serviceWorker.register('./sw.js').catch(() => {});
     });
   }
+
+  (function () {
+    var publishTime = new Date('2026-05-27T10:00:00');
+    var card = document.getElementById('deel-2-card');
+    var label = document.getElementById('deel-2-label');
+
+    function checkUnlock() {
+      if (new Date() >= publishTime) {
+        card.href = 'deel-2.html';
+        card.removeAttribute('aria-disabled');
+        card.classList.remove('story-card--soon');
+        label.textContent = 'Lees →';
+        label.className = 'card-cta';
+        clearInterval(interval);
+      }
+    }
+
+    checkUnlock();
+    var interval = setInterval(checkUnlock, 30000);
+  })();
 </script>
 </body>
 </html>
