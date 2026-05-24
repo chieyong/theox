@@ -24,7 +24,10 @@ jobs:
           password: ${{ secrets.FTP_PASSWORD }}
           server-dir: ${{ secrets.FTP_DIR }}
           protocol: ftps
-          passive: true
+          exclude: |
+            **/.git*
+            **/.git*/**
+            **/audio/**
 
       - name: Upload via FTP (dev)
         if: github.ref == 'refs/heads/dev'
@@ -35,4 +38,7 @@ jobs:
           password: ${{ secrets.FTP_PASSWORD }}
           server-dir: ${{ secrets.FTP_DIR_DEV }}
           protocol: ftps
-          passive: true
+          exclude: |
+            **/.git*
+            **/.git*/**
+            **/audio/**
