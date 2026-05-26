@@ -223,6 +223,7 @@
     </a>
 
     <a id="deel-2-card" class="story-card story-card--soon" aria-disabled="true">
+      <img class="card-illus" id="deel-2-illus" src="../Illustrations/6/1.png" aria-hidden="true" alt="" style="display:none" />
       <div class="card-content">
         <p class="card-deel">Deel II</p>
         <h2 class="card-title">Schaduw van het Licht</h2>
@@ -233,8 +234,8 @@
     <div class="story-card story-card--soon">
       <div class="card-content">
         <p class="card-deel">Deel III</p>
-        <!-- Na de Vleugels -->
-        <p class="card-soon-label">Binnenkort</p>
+        <h2 class="card-title" id="deel-3-title" style="display:none">Na de Vleugels</h2>
+        <p class="card-soon-label" id="deel-3-label">Binnenkort</p>
       </div>
     </div>
 
@@ -278,6 +279,9 @@
         card.classList.remove('story-card--soon');
         label.textContent = 'Lees →';
         label.className = 'card-cta';
+        document.getElementById('deel-2-illus').style.display = '';
+        document.getElementById('deel-3-title').style.display = '';
+        document.getElementById('deel-3-label').textContent = '3 juni · 10:00';
         clearInterval(interval);
       }
     }
