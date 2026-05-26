@@ -334,6 +334,7 @@
 
 <div class="story-end">
   <div class="end-rule"></div>
+  <a class="next-link" id="next-deel-link" href="deel-2.html" style="display:none">Deel II — Schaduw van het Licht →</a>
 </div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
@@ -368,6 +369,20 @@
     }
     started = true;
   });
+</script>
+<script>
+  (function () {
+    var publishTime = new Date('2026-05-27T10:00:00');
+    var link = document.getElementById('next-deel-link');
+    function checkUnlock() {
+      if (new Date() >= publishTime) {
+        link.style.display = '';
+        clearInterval(interval);
+      }
+    }
+    checkUnlock();
+    var interval = setInterval(checkUnlock, 30000);
+  })();
 </script>
 <script>
   if ('serviceWorker' in navigator) {

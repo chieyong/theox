@@ -318,7 +318,24 @@ body {
 .story-end {
   padding: 5rem 2rem 18vh;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  gap: 2.5rem;
+}
+
+.next-link {
+  font-family: var(--font-head);
+  font-size: 0.75rem;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: var(--accent);
+  text-decoration: none;
+  opacity: 0.6;
+  transition: opacity 0.25s ease;
+}
+
+.next-link:hover {
+  opacity: 1;
 }
 
 .end-rule {
