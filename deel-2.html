@@ -37,7 +37,7 @@
 
 <a class="site-link" href="index.html">← Terug</a>
 
-<audio id="bg-music" src="./audio/Max%20Richter%20-%20we%20circle%20through%20the%20night%20consumed%20by%20fire.mp3" loop preload="auto"></audio>
+<audio id="bg-music" src="./audio/Max%20Richter%20-%20we%20circle%20through%20the%20night%20consumed%20by%20fire.mp3" preload="auto"></audio>
 
 <button class="music-btn" id="music-btn" aria-label="Muziek aan/uit">♪</button>
 <span class="music-hint" id="music-hint">tik voor muziek</span>
@@ -307,6 +307,7 @@
 <!-- ─── VERHAAL VII ─── -->
 
 <section class="scene" id="story-7">
+  <img class="scene-img" src="../Illustrations/7/1.png" aria-hidden="true" alt="" />
   <div class="chapter">
     <p class="chapter-label">VII</p>
     <h2 class="chapter-title">Het Stille Water</h2>
@@ -322,6 +323,7 @@
 </section>
 
 <section class="scene">
+  <img class="scene-img" src="../Illustrations/7/2.png" aria-hidden="true" alt="" />
   <div class="prose">
     <div class="line"><p>Een tijdje stonden zij zwijgend.<br>Het water bewoog niet.<br>Een libelle streek erover en raakte het nauwelijks.</p></div>
     <div class="line"><p>De Kraanvogel boog haar kop.<br>Aan de overkant leek zij stiller dan gewoonlijk.<br>Niet kleiner.<br>Maar dichter bij de grond.</p></div>
@@ -395,6 +397,11 @@
   const hint = document.getElementById('music-hint');
   music.volume = 0.15;
 
+  const music2 = new Audio('./audio/Johann%20Johannsson%20-%20By%20the%20Roes%20and%20by%20the%20Hinds%20of%20the%20Field.mp3');
+  music2.volume = 0.15;
+  music2.loop = true;
+  music.addEventListener('ended', () => music2.play().catch(() => {}));
+
   function hideHint() { if (hint) hint.style.display = 'none'; }
 
   let started = false;
@@ -403,18 +410,30 @@
     started = true;
     hideHint();
     music.play().catch(() => {});
+    document.removeEventListener('click', startMusic);
+    document.removeEventListener('keydown', startMusic);
     window.removeEventListener('scroll', startMusic);
   }
-  window.addEventListener('scroll', startMusic, { passive: true });
+
+  music.play().then(() => {
+    started = true;
+    hideHint();
+  }).catch(() => {
+    document.addEventListener('click', startMusic);
+    document.addEventListener('keydown', startMusic);
+    window.addEventListener('scroll', startMusic, { passive: true });
+  });
 
   btn.addEventListener('click', () => {
     hideHint();
-    if (music.paused) {
-      music.play().catch(() => {});
-      btn.classList.remove('muted');
-    } else {
+    const isPlaying = !music.paused || !music2.paused;
+    if (isPlaying) {
       music.pause();
+      music2.pause();
       btn.classList.add('muted');
+    } else {
+      (music2.currentTime > 0 ? music2 : music).play().catch(() => {});
+      btn.classList.remove('muted');
     }
     started = true;
   });
