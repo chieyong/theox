@@ -2,7 +2,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 // ─── Chapter navigation dots ──────────────────
 const dots = document.querySelectorAll('.nav-dot');
-const sections = ['cover', 'story-1', 'story-2', 'story-3'];
+const sections = Array.from(dots).map(d => d.dataset.target);
 
 function setActiveDot(id) {
   dots.forEach(dot => dot.classList.toggle('active', dot.dataset.target === id));
