@@ -1,9 +1,10 @@
-const CACHE = 'stille-os-v10';
+const CACHE = 'stille-os-v11';
 
 const PRECACHE = [
   './',
   './index.html',
   './deel-1.html',
+  './deel-3.html',
   './style.css',
   './script.js',
   './manifest.json',
