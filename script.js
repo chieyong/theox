@@ -16,20 +16,20 @@ dots.forEach(dot => {
   });
 });
 
-// IntersectionObserver: mark active as sections cross the viewport midpoint
-const observer = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) setActiveDot(entry.target.id);
+// Scroll: mark active dot based on which section's top is above viewport midpoint
+function updateActiveDot() {
+  const mid = window.innerHeight / 2;
+  let activeId = null;
+  sections.forEach(id => {
+    const el = document.getElementById(id);
+    if (!el) return;
+    if (el.getBoundingClientRect().top <= mid) activeId = id;
   });
-}, {
-  rootMargin: '-40% 0px -40% 0px',
-  threshold: 0
-});
+  if (activeId) setActiveDot(activeId);
+}
 
-sections.forEach(id => {
-  const el = document.getElementById(id);
-  if (el) observer.observe(el);
-});
+window.addEventListener('scroll', updateActiveDot, { passive: true });
+updateActiveDot();
 
 // ─── Progress bar ─────────────────────────────
 const bar = document.getElementById('progress');
