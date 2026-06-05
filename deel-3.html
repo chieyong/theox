@@ -9,20 +9,414 @@
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Lora:ital,wght@0,400;1,400&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
   <link rel="manifest" href="manifest.json" />
+  <style>
+    .music-hint {
+      position: fixed;
+      top: 1.25rem;
+      right: 3.2rem;
+      z-index: 200;
+      font-family: var(--font-head);
+      font-size: 0.65rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--ink-muted);
+      white-space: nowrap;
+      pointer-events: none;
+      animation: music-hint-fade 4.5s ease forwards;
+    }
+    @keyframes music-hint-fade {
+      0%   { opacity: 0; }
+      10%  { opacity: 0.65; }
+      75%  { opacity: 0.65; }
+      100% { opacity: 0; }
+    }
+  </style>
   <meta name="theme-color" content="#F8F5EF" />
 </head>
 <body>
 
 <a class="site-link" href="index.html">← Terug</a>
 
+<audio id="bg-music" src="./audio/Philip%20Glass%20-%20Truman%20Sleeps.mp3" loop preload="auto"></audio>
+
+<button class="music-btn" id="music-btn" aria-label="Muziek aan/uit">♪</button>
+<span class="music-hint" id="music-hint">tik voor muziek</span>
+
 <div class="progress-bar" id="progress"></div>
 
+<nav class="chapter-nav" aria-label="Hoofdstuknavigatie">
+  <button class="nav-dot" data-target="cover">
+    <span class="dot-label">Begin</span>
+  </button>
+  <button class="nav-dot" data-target="story-8">
+    <span class="dot-label">VIII — Het Nest dat Ademhaalde</span>
+  </button>
+  <button class="nav-dot" data-target="story-9">
+    <span class="dot-label">IX — De Hoek met de Open Deur</span>
+  </button>
+  <button class="nav-dot" data-target="story-10">
+    <span class="dot-label">X — Wat in het Hart Bleef</span>
+  </button>
+</nav>
+
+<!-- ─── COVER ─── -->
 <section class="cover" id="cover">
   <h1 class="cover-title">Na de Vleugels<em>Deel III</em></h1>
   <div class="cover-rule"></div>
-  <p class="scroll-hint">Beschikbaar op 10 juni · 10:00</p>
+  <p class="scroll-hint">Scroll om te lezen</p>
 </section>
 
+<!-- ─── VERHAAL VIII ─── -->
+
+<section class="scene" id="story-8">
+  <div class="chapter">
+    <p class="chapter-label">VIII</p>
+    <h2 class="chapter-title">Het Nest dat Ademhaalde</h2>
+  </div>
+  <div class="prose">
+    <div class="line"><p>De Kraanvogel kwam niet meer naar het veld.</p></div>
+    <div class="line"><p>Dat was geen besluit dat zij elke ochtend opnieuw moest nemen.<br>Op een gegeven moment was het iets dat zijzelf was geworden.</p></div>
+    <div class="line"><p>De herfst kwam.</p></div>
+    <div class="line"><p>De bladeren onder de dennen werden bruin.<br>De wind trok door het nest op een andere manier dan in de zomer — scherper, met een rand die langs de veren streek.</p></div>
+    <div class="line"><p>De jonge vogels werden groter.<br>Hun veren waren niet meer dun.<br>Hun stemmen waren niet meer zacht.</p></div>
+    <div class="line"><p>Soms riep er een naar de andere kant van het nest en bleef de roep daar hangen, even, voordat hij beantwoord werd.</p></div>
+    <div class="line"><p>De Kraanvogel keek ernaar.<br>Niet als toeschouwer.<br>Als moeder die opnieuw leerde wat het was om aanwezig te zijn.</p></div>
+  </div>
+</section>
+
+<section class="scene">
+  <div class="prose">
+    <div class="line"><p>De Reiger stond nog steeds op zijn tak.<br>Zijn schaduw viel nog steeds over het nest in de middag.</p></div>
+    <div class="line"><p>Maar zij had iets opgemerkt waar zij eerder overheen had gevlogen.<br>Zijn schaduw viel altijd in dezelfde richting.<br>Hij wist niet hoe hij ergens anders kon staan.</p></div>
+    <div class="line"><p>Op een avond, toen de jonge vogels al sliepen, zei zij iets wat zij in jaren niet had gezegd.</p></div>
+    <div class="line"><p>'Ik heb je iets te vertellen.'</p></div>
+    <div class="line"><p>De Reiger draaide zijn kop.<br>Hij was niet boos.<br>Hij was iets anders.<br>Iets dat zij nooit eerder op zijn gezicht had gezien.<br>Aandacht.</p></div>
+    <div class="line"><p>'Ja.'</p></div>
+    <div class="line"><p>'De jongen openen hun snavels niet wanneer jij boven hen staat.'</p></div>
+    <div class="line"><p>'Ik heb het zelf jaren niet gedaan.'</p></div>
+    <div class="line"><p>'Ik ga het nu wel doen.'</p></div>
+    <div class="line"><p>Het was geen verwijt.<br>Zij vroeg hem niet om iets.<br>Zij vertelde hem alleen wat zij ging doen.</p></div>
+  </div>
+</section>
+
+<section class="scene">
+  <div class="prose">
+    <div class="line"><p>De Reiger keek naar haar.<br>Hij keek naar de jonge vogels onder zich.<br>Hij keek naar de tak waarop hij stond.<br>Hij wist niet wat hij ermee moest.</p></div>
+    <div class="line"><p>'Ik wist het niet,' zei hij.</p></div>
+    <div class="line"><p>'Nee,' zei de Kraanvogel.<br>'Ik ook lang niet.'</p></div>
+    <div class="line"><p>Zij zaten een tijd zwijgend.<br>De Reiger bewoog zich niet.<br>Hij stond nog steeds op dezelfde tak.</p></div>
+    <div class="line"><p>Misschien zou hij die later verlaten.<br>Misschien niet.<br>Dat was niet meer aan haar.</p></div>
+    <div class="line"><p>Wat aan haar was, deed zij zelf.</p></div>
+  </div>
+</section>
+
+<section class="scene">
+  <div class="prose">
+    <div class="line"><p>De volgende ochtend, toen het licht over het nest viel, opende zij haar snavel.<br>Niet luid.<br>Maar ook niet zacht.<br>Een toon die zij in jaren niet had laten klinken.</p></div>
+    <div class="line"><p>Eén van de jonge vogels hief zijn kop.<br>Hij keek naar haar.<br>Hij keek naar de hoge tak.<br>Toen, voorzichtig, opende ook hij zijn snavel.</p></div>
+    <div class="line"><p>Een toon, dun maar duidelijk.</p></div>
+    <div class="line"><p>De Kraanvogel zong terug.<br>De jonge vogel zong opnieuw.</p></div>
+    <div class="line"><p>Boven hen stond de Reiger op zijn tak.<br>Hij hoorde het.<br>Hij maakte het geluid niet kleiner.<br>Maar hij verplaatste zich ook niet.</p></div>
+    <div class="line"><p>Hij stond gewoon waar hij stond.<br>En zij zong gewoon waar zij was.</p></div>
+  </div>
+</section>
+
+<section class="scene">
+  <div class="prose">
+    <div class="line"><p>De Reiger keek terug.<br>'Vlieg jij ook nog weg?'</p></div>
+    <div class="line"><p>De vraag verraste haar.<br>Hij was eenvoudiger gesteld dan zij had verwacht van een dier dat zelden vroeg.</p></div>
+    <div class="line"><p>Zij dacht aan het veld.<br>Aan de Os.<br>Aan de steen waarachter zij samen naar de hemel hadden gekeken.<br>Aan het water waarbij zij voor de laatste keer hadden gesproken.</p></div>
+    <div class="line"><p>'Ik vlieg,' zei zij.<br>'Maar ik kom terug.'</p></div>
+    <div class="line"><p>'Hier?'</p></div>
+    <div class="line"><p>'Hier.'</p></div>
+    <div class="line"><p>De Reiger knikte.<br>Hij vroeg niet door.<br>Misschien voelde hij dat doorvragen iets zou breken dat juist op het punt stond om opnieuw vorm te krijgen.<br>Misschien begreep hij dat sommige antwoorden er pas zijn wanneer de vraag een tijd in het nest mocht liggen.</p></div>
+  </div>
+</section>
+
+<section class="scene">
+  <div class="prose">
+    <div class="line"><p>Het werd nacht.<br>De jonge vogels sliepen.<br>De wind viel.<br>De maan stond hoog boven de dennen.</p></div>
+    <div class="line"><p>De Kraanvogel zat naast haar jongste kind.<br>Eén van hen werd wakker, even, en opende zijn snavel.</p></div>
+    <div class="line"><p>Niet hard.<br>Maar ook niet zacht.<br>Iets daartussenin.</p></div>
+    <div class="line"><p>Een geluid van een vogel die nog niet wist hoe groot hij mocht zijn, maar het uitprobeerde.</p></div>
+    <div class="line"><p>De Reiger op zijn lagere tak hoorde het.<br>Hij draaide zijn kop niet.<br>Hij maakte het geluid niet kleiner.</p></div>
+    <div class="line"><p>De jonge vogel zong nog een tweede toon.<br>Toen sliep hij verder.</p></div>
+    <div class="line"><p>De Kraanvogel keek naar de maan.<br>Zij dacht niet aan het veld.<br>Niet op deze avond.</p></div>
+    <div class="line"><p>Niet omdat zij het was vergeten — zij was niets vergeten.<br>Maar omdat zij voor het eerst sinds lange tijd haar vleugels niet hoefde te gebruiken om zichzelf te dragen.</p></div>
+    <div class="line"><p>De tak hield haar.<br>Het nest hield haar.<br>De maan hield haar zoals de maan een vogel kan houden zonder haar aan te raken.</p></div>
+    <div class="line"><p>Zij begreep iets wat zij niet eerder had begrepen.</p></div>
+    <div class="line"><p>Vrijheid was niet alleen kunnen wegvliegen.<br>Vrijheid was ook kunnen blijven zonder zichzelf kleiner te maken dan zij was.</p></div>
+    <div class="line"><p>Zij was hier.<br>Met haar volle gewicht.<br>Met haar volle stem.<br>En het nest hield haar.</p></div>
+    <div class="line ending"><p>Beneden, ergens onder de dennen, ritselde iets.<br>Een kleine windvlaag streek over een ver veld.<br>Zij wist niet of de Os ergens onder de hemel naar diezelfde maan keek.<br>Het maakte niet uit.<br>De maan was groot genoeg.</p></div>
+  </div>
+</section>
+
+<div class="divider">· · ·</div>
+
+<!-- ─── VERHAAL IX ─── -->
+
+<section class="scene" id="story-9">
+  <div class="chapter">
+    <p class="chapter-label">IX</p>
+    <h2 class="chapter-title">De Hoek met de Open Deur</h2>
+  </div>
+  <div class="prose">
+    <div class="line"><p>Het was niet één moment waarop de Os veranderde.<br>Het waren vele kleine momenten samen.</p></div>
+    <div class="line"><p>De steen lag op de vloer.</p></div>
+    <div class="line"><p>In het begin had iemand hem soms voorzichtig opzij geschoven wanneer er kommen werden weggezet.<br>Na een tijdje liet niemand hem meer verplaatsen.<br>Nog later begonnen de kalveren eromheen te lopen alsof hij er altijd had gelegen.</p></div>
+    <div class="line"><p>Het jongste kalf — dat geen jongste meer was, maar nog wel het kleinste — speelde met hem.<br>Zat erop.<br>Legde er kleine dingen omheen.</p></div>
+    <div class="line"><p>Een dennenappel.<br>Een gedroogd blad.<br>Een stukje touw uit de schuur.</p></div>
+    <div class="line"><p>De steen werd geen ding meer dat de Os ooit had binnengebracht.<br>Hij werd een ding dat in dit huis hoorde.</p></div>
+    <div class="line"><p>De Os zag het.<br>Hij zei er niets over.<br>Hij hoefde er niets over te zeggen.</p></div>
+  </div>
+</section>
+
+<section class="scene">
+  <div class="prose">
+    <div class="line"><p>Wat hem opviel, was iets anders.</p></div>
+    <div class="line"><p>De deur tussen het huis en de hoek achter de stal was niet meer een deur die hij dichthield.</p></div>
+    <div class="line"><p>Vroeger had hij elke gang naar de hoek voorbereid.<br>Hij wachtte tot iedereen iets anders deed.<br>Hij liep langs een omweg.<br>Hij maakte zijn afwezigheid kleiner dan zij was.</p></div>
+    <div class="line"><p>Nu liep hij gewoon naar buiten.<br>Wanneer hij daar zin in had.</p></div>
+    <div class="line"><p>Niemand vroeg waarheen.<br>Niemand keek hem na.<br>Niemand maakte van zijn vertrek iets om uitleg over te geven.</p></div>
+    <div class="line"><p>Dat was misschien wel het grootste verschil.<br>Niet dat hij meer of minder ging.<br>Maar dat hij niet meer hoefde te verbergen dat de hoek bestond.</p></div>
+  </div>
+</section>
+
+<section class="scene">
+  <div class="prose">
+    <div class="line"><p>Op een avond in de late herfst stond hij bij de drempel.<br>Buiten was de lucht koud geworden.<br>Het rook naar natte bladeren.</p></div>
+    <div class="line"><p>Hij dacht eraan om naar de hoek te lopen.<br>Hij wist eigenlijk niet waarom.<br>Hij had niets te bewaren.<br>Hij had niets te ontvluchten.</p></div>
+    <div class="line"><p>Hij wilde alleen even op die plek zijn waar de stenen lagen zoals hij ze had achtergelaten.</p></div>
+    <div class="line"><p>Hij stapte naar buiten.</p></div>
+    <div class="line"><p>Hij hoorde voetstappen achter zich.<br>Klein.<br>Niet meer zo klein als vroeger.</p></div>
+    <div class="line"><p>Het kleinste kalf liep achter hem aan.<br>Het zei niets.<br>Het vroeg niet of het mee mocht.<br>Het liep gewoon mee, op die manier waarop jonge dieren met een ouder dier meelopen wanneer zij voelen dat dat mag.</p></div>
+  </div>
+</section>
+
+<section class="scene">
+  <div class="prose">
+    <div class="line"><p>De Os bleef even staan bij de zijkant van het huis.<br>Hij wist niet of hij iets moest zeggen.<br>Hij wist niet of het kalf naar de hoek mocht.</p></div>
+    <div class="line"><p>Het was nog steeds zijn hoek.<br>Maar het kalf had er al jaren eerder gestaan, op een avond toen het nog klein was, en het had toen niets aangeraakt.</p></div>
+    <div class="line"><p>Hij liep door.<br>Het kalf liep mee.</p></div>
+    <div class="line"><p>Aan de zijkant van de stal stonden zij stil.<br>Voor hen lag de hoek.<br>De stenen.<br>De brug.</p></div>
+    <div class="line"><p>De berg die ooit was meegegaan naar het huis en daar nog steeds lag, en de stenen die in zijn plaats nieuwe bergen waren geworden voor wie ze zo wilde zien.</p></div>
+    <div class="line"><p>Tussen twee andere stenen lag de veer.<br>Zij was niet meer helemaal zilver.<br>De jaren hadden iets uit haar weggehaald.<br>Maar zij was er nog.</p></div>
+    <div class="line"><p>Het kalf zag haar.<br>Het keek lang.<br>Niet nieuwsgierig.<br>Niet bevreemd.<br>Eerder zoals een dier naar iets kijkt waarvan het al lang wist dat het er was, en dat het nu pas voor het eerst werkelijk zag.</p></div>
+    <div class="line"><p>'Is dat van iemand?'</p></div>
+  </div>
+</section>
+
+<section class="scene">
+  <div class="prose">
+    <div class="line"><p>De vraag was bijna hetzelfde als wat dit kalf jaren geleden had gevraagd, toen het op een avond ineens bij de rand van de hoek had gestaan en de Os zo had geschrokken.<br>Toen had de Os geantwoord: ja.<br>Nu antwoordde hij ook.</p></div>
+    <div class="line"><p>'Ja.'</p></div>
+    <div class="line"><p>Het kalf knikte.<br>Het vroeg niet wie.<br>Het vroeg niet of zij terugkwam.<br>Het vroeg niets dat een naam of een verklaring nodig had.<br>Het keek alleen.</p></div>
+    <div class="line"><p>Toen ging het naast de Os zitten.</p></div>
+    <div class="line"><p>De wind ritselde in de bladeren die op de stenen waren gevallen.<br>Een tijdje zaten zij zwijgend.</p></div>
+    <div class="line"><p>Het kalf keek niet meer naar de veer.<br>Het keek naar zijn vader.<br>Niet om iets te vragen.<br>Om te zien wie deze plek bewoonde.</p></div>
+    <div class="line"><p>De Os voelde de blik.</p></div>
+    <div class="line"><p>Vroeger zou hij die blik niet hebben verdragen.<br>Vroeger zou hij iets hebben gezegd om de aandacht ergens anders heen te leiden.<br>Of hij zou zijn opgestaan.<br>Of hij zou hebben gezwegen op een manier die maakte dat het kalf vanzelf wegging.</p></div>
+    <div class="line"><p>Nu deed hij geen van die drie.<br>Hij liet zich kijken.</p></div>
+  </div>
+</section>
+
+<section class="scene">
+  <div class="prose">
+    <div class="line"><p>Hij dacht aan al die jaren waarin hij hier alleen was geweest, omdat hij dacht dat alleen-zijn de enige manier was om zichzelf te zijn.</p></div>
+    <div class="line"><p>Hij dacht aan de eerste avond dat dit kalf hier was gekomen.<br>Aan zijn schrik toen.<br>Aan de schoffel van zijn hoef waarmee hij stenen had willen verbergen die al lang gezien waren.<br>Aan zijn ja, eindelijk, omdat hij toen begreep dat verborgen blijven niet meer was dan een vorm van afwezigheid waar niemand naar vroeg.</p></div>
+    <div class="line"><p>Nu was alles anders.<br>Het kalf kende deze plek.<br>Het kalf hoefde niets te begrijpen.</p></div>
+    <div class="line"><p>Het kalf zat alleen naast hem, zoals een dier naast een ander dier kan zitten wanneer het weet dat de andere er mag zijn.</p></div>
+    <div class="line"><p>Het kalf zei iets.<br>Zachtjes.<br>Bijna voor zichzelf.</p></div>
+    <div class="line"><p>'Het is een mooi plekje.'</p></div>
+    <div class="line"><p>Meer niet.</p></div>
+    <div class="line"><p>De Os knikte.<br>Hij wist niet of het kalf zag dat hij knikte.<br>Maar hij wist dat het kalf het voelde.</p></div>
+  </div>
+</section>
+
+<section class="scene">
+  <div class="prose">
+    <div class="line"><p>Een tijdje later stond het kalf op.<br>Het raakte de stenen niet aan.<br>Het raakte de veer niet aan.<br>Het liep terug naar het huis.</p></div>
+    <div class="line"><p>De Os bleef nog even zitten.<br>Hij keek naar de veer.</p></div>
+    <div class="line"><p>Hij dacht aan de Kraanvogel.<br>Aan haar zilveren hals tegen het groen van het riet.<br>Aan de bloemen waaronder kevers leefden.<br>Aan de steen waarachter zij samen naar de hemel hadden gekeken.<br>Aan de woorden bij het water.</p></div>
+    <div class="line"><p>Hij dacht ook aan iets wat hij vandaag pas helemaal begreep.</p></div>
+    <div class="line"><p>Wat zij hem had laten zien, was niet hoe je iemand anders kunt liefhebben.<br>Wat zij hem had laten zien, was hoe je zichtbaar kunt zijn.</p></div>
+    <div class="line"><p>Niet voor haar.<br>Voor wie er ook maar naast je gaat zitten en je kijkt, en niet vraagt om iets anders te zijn.</p></div>
+    <div class="line"><p>Dat had hij toen niet kunnen weten.<br>Hij wist het nu.</p></div>
+    <div class="line"><p>De wind ritselde in de bladeren.<br>Boven de stal stond de maan al laag, hoewel het nog vroeg in de avond was.<br>Een dunne maan.<br>Niet één om over te schrijven.<br>Eén om mee samen te zijn.</p></div>
+  </div>
+</section>
+
+<section class="scene">
+  <div class="prose">
+    <div class="line"><p>De Os stond op.<br>Hij liep terug naar het huis.</p></div>
+    <div class="line"><p>De deur stond een stukje open.<br>Binnen brandde de lamp.</p></div>
+    <div class="line"><p>Er klonken stemmen — eentje een beetje hoger dan vroeger, eentje een beetje lager, eentje van het kleinste kalf dat net iets vertelde wat de anderen aan het lachen maakte.</p></div>
+    <div class="line"><p>De Os bleef even op de drempel staan.<br>Hij ging niet onmiddellijk naar binnen.<br>Hij keek naar het licht in de spleet van de deur.</p></div>
+    <div class="line"><p>Toen duwde hij haar open en stapte naar binnen.</p></div>
+    <div class="line ending"><p>De deur sloot niet helemaal achter hem.<br>Een dun streepje koude lucht bleef binnenkomen.<br>Niemand stond op om haar dicht te doen.<br>Het was die avond geen huis waar deuren dicht hoefden.</p></div>
+  </div>
+</section>
+
+<div class="divider">· · ·</div>
+
+<!-- ─── VERHAAL X ─── -->
+
+<section class="scene" id="story-10">
+  <div class="chapter">
+    <p class="chapter-label">X</p>
+    <h2 class="chapter-title">Wat in het Hart Bleef</h2>
+  </div>
+  <div class="prose">
+    <div class="line"><p>Het waren jaren later.<br>Het hoeft niet precies te worden gezegd hoeveel.</p></div>
+    <div class="line"><p>De Os was ouder geworden.<br>Zijn voren in het veld waren niet meer zo recht.<br>Zijn rug boog iets meer dan vroeger.<br>Maar hij stond nog steeds op.</p></div>
+    <div class="line"><p>Hij liep nog steeds naar buiten in de ochtend.<br>Hij ploegde nog steeds, hoewel hij vaker pauzeerde dan vroeger, en hoewel een jonger dier nu vaak naast hem liep — een van de kalveren, dat geen kalf meer was, dat zelf al voren leerde trekken.</p></div>
+    <div class="line"><p>Het huis was niet veranderd.<br>Iets ouder misschien.<br>De balken iets donkerder.<br>De lamp brandde nog steeds, hoewel niet altijd op dezelfde tijden.</p></div>
+    <div class="line"><p>Een vrouwelijke os die de Witte Koe vervangen had op de plekken waar de jaren te zwaar werden, was vaker bij haar dan vroeger.<br>Niet anders, niet beter, gewoon: meer.</p></div>
+    <div class="line"><p>De dingen vinden hun eigen volgorde wanneer de tijd traag genoeg gaat.</p></div>
+  </div>
+</section>
+
+<section class="scene">
+  <div class="prose">
+    <div class="line"><p>Op een ochtend in het vroege voorjaar liep de Os langs het water aan de rand van het veld.<br>Hij had geen reden om daarheen te gaan.<br>Zijn poten brachten hem ernaartoe.</p></div>
+    <div class="line"><p>De bamboe ruiste licht.<br>De maan was nog zichtbaar in de ochtendlucht, dun en wit, zoals hij was geweest op die ochtend lang geleden.</p></div>
+    <div class="line"><p>De Os stond bij het water.<br>Hij boog zijn kop.<br>Hij keek naar zijn eigen spiegelbeeld.<br>Het was een ouder gezicht dan hij zich herinnerde.<br>Maar het was nog steeds het zijne.</p></div>
+    <div class="line"><p>Hij dacht niet aan haar.<br>Niet zoals een dier dat iemand mist denkt aan degene die er niet is.</p></div>
+    <div class="line"><p>Hij dacht aan haar zoals een dier denkt aan iets wat een deel van zijn eigen leven is geworden.<br>Niet apart van hem.<br>Niet ergens anders.<br>Gewoon hier, in de manier waarop hij keek, in de manier waarop hij naar bloemen kon kijken en daaronder kevers zag, in de manier waarop hij soms achter een steen ging staan om de hemel kleiner te maken zodat hij draagbaar werd.</p></div>
+    <div class="line"><p>Zij was niet weg.<br>Zij was alleen niet hier.<br>Dat was iets anders dan weg.</p></div>
+    <div class="line"><p>Hij hief zijn kop.<br>Aan de overkant van het water bewoog niets.<br>Er stonden geen vogels in de bamboe.<br>Er was geen schaduw in de lucht.<br>Het was alleen ochtend.</p></div>
+    <div class="line"><p>De wind streek door het riet.<br>Hij keek nog een tijd.<br>Toen draaide hij zich om en liep terug.</p></div>
+  </div>
+</section>
+
+<section class="scene">
+  <div class="prose">
+    <div class="line"><p>Onderweg kwam hij langs de hoek achter de stal.<br>Hij ging er niet meer vaak heen.</p></div>
+    <div class="line"><p>De stenen lagen er nog.<br>De brug.<br>De stenen die ooit nieuwe bergen waren geworden voor wie ze zo wilde zien.</p></div>
+    <div class="line"><p>En de berg die ooit was meegegaan naar het huis — die lag nog steeds binnen, onder de tafel, schaduw van een ding dat al jaren geleden iets nieuws was geworden.</p></div>
+    <div class="line"><p>Tussen twee andere stenen, in de hoek, lag iets dat ooit een veer was geweest.<br>Zij was niet meer zilver.<br>Zij was kleurloos geworden.</p></div>
+    <div class="line"><p>De jaren hadden haar zacht gemaakt, en daarna brozer, en daarna iets wat bijna geen veer meer was — meer een lijn, een herinnering aan een vorm, een ding dat nog net niet helemaal door de wind was meegenomen.</p></div>
+    <div class="line"><p>De Os keek naar haar.<br>Hij had haar in lang niet meer gezien.<br>Maar hij had geweten dat zij er was.</p></div>
+    <div class="line"><p>Dat is iets anders dan zien.<br>Dat is een vorm van bewaren die geen ogen nodig heeft.</p></div>
+  </div>
+</section>
+
+<section class="scene">
+  <div class="prose">
+    <div class="line"><p>Hij dacht aan haar.<br>Aan de Kraanvogel.<br>Aan haar zilveren hals tegen het groen van het riet.<br>Aan haar vraag op die eerste dag.<br>Aan haar woorden bij het stille water.</p></div>
+    <div class="line"><p>Hij wist niet of zij nog leefde.<br>Vogels werden ouder dan koeien soms wel, soms niet.<br>Hij wist het niet, en hij hoefde het niet te weten.</p></div>
+    <div class="line"><p>Wat zij hem had gegeven, was niet afhankelijk van of zij nog ergens vloog.<br>Het was van hem geworden.</p></div>
+    <div class="line"><p>Niet zoals een ding van je is.<br>Zoals een licht van je is wanneer iemand het ooit op je heeft laten vallen en je daarna nooit meer in helemaal dezelfde duisternis hebt gestaan.</p></div>
+    <div class="line"><p>Hij stond bij de veer.<br>Hij raakte haar niet aan.</p></div>
+    <div class="line"><p>Wegnemen zou haar breken.<br>En neerleggen zou betekenen dat hij haar verplaatste, en zij hoefde niet verplaatst.<br>Zij hoefde alleen daar te liggen waar zij lag.</p></div>
+  </div>
+</section>
+
+<section class="scene">
+  <div class="prose">
+    <div class="line"><p>Hij hoorde voetstappen achter zich.<br>Niet klein meer.</p></div>
+    <div class="line"><p>De jonge os — die geen jong meer was, maar volwassen, met een eigen rug en eigen voren — kwam naast hem staan.</p></div>
+    <div class="line"><p>'Vader.'</p></div>
+    <div class="line"><p>'Ja.'</p></div>
+    <div class="line"><p>Een tijdje zeiden zij niets.<br>De jonge os keek naar de hoek.<br>Naar de stenen.<br>Naar de veer.</p></div>
+    <div class="line"><p>Hij was hier al vaker geweest, jaren geleden, toen hij nog klein was.<br>Hij had nooit gevraagd waar de veer vandaan kwam.<br>Hij had haar nooit aangeraakt.</p></div>
+    <div class="line"><p>Hij keek nu naar zijn vader.</p></div>
+    <div class="line"><p>'Is zij van iemand?'</p></div>
+    <div class="line"><p>De vraag was bijna hetzelfde als hij had gesteld als kalf.<br>Maar nu klonk hij anders.<br>Nu klonk hij alsof de jonge os al iets wist.<br>Niet over de veer.<br>Over wat het betekent om iets te bewaren zonder erover te spreken.</p></div>
+    <div class="line"><p>De Os keek naar de veer.</p></div>
+    <div class="line"><p>'Ja.'</p></div>
+    <div class="line"><p>'Komt zij terug?'</p></div>
+    <div class="line"><p>'Zij is nooit weggegaan.'</p></div>
+  </div>
+</section>
+
+<section class="scene">
+  <div class="prose">
+    <div class="line"><p>De jonge os knikte.<br>Hij begreep het.<br>Niet helemaal.<br>Maar genoeg.</p></div>
+    <div class="line"><p>'Ik zal goed voor de hoek zorgen,' zei hij.<br>'Wanneer u er niet meer bent.'</p></div>
+    <div class="line"><p>De Os keek hem aan.<br>Hij dacht aan de jaren.<br>Aan het veld dat hij straks zou doorgeven.<br>Aan de ploeg die andere hoeven al kende.<br>Aan dit kind, dat geen kind meer was, dat begrepen had wat het was om een plek te bewaren waarvan je niet eens hoefde te weten wat zij betekende — alleen dat zij betekende.</p></div>
+    <div class="line"><p>'Dat weet ik,' zei hij.</p></div>
+    <div class="line"><p>Zij stonden samen een tijd bij de hoek.<br>Een windje streek door de bladeren in de stal.</p></div>
+    <div class="line"><p>Iets bewoog in het gras voor hen — een kleine kever, glanzend, donkergroen, die door de stelen heen liep alsof het veld van hem was.</p></div>
+    <div class="line"><p>De Os keek naar hem.<br>Hij dacht aan een ander veld.<br>Aan een dier dat naast hem had gestaan en gezegd had: kijk.</p></div>
+    <div class="line"><p>Hij had toen niet geweten dat een leven uit kleine kijkmomenten kan worden opgebouwd.<br>Hij wist het nu.</p></div>
+  </div>
+</section>
+
+<section class="scene">
+  <div class="prose">
+    <div class="line"><p>De jonge os zag de kever ook.</p></div>
+    <div class="line"><p>'Wat doet hij?'</p></div>
+    <div class="line"><p>'Hij maakt een wereld onder de bloemen.'</p></div>
+    <div class="line"><p>'Dat weten alleen de andere kevers.'</p></div>
+    <div class="line"><p>De jonge os glimlachte.<br>Hij vroeg niet door.<br>Hij wist al hoe sommige antwoorden er in een vader liggen — niet om uitgelegd te worden, maar om gehoord te zijn.</p></div>
+    <div class="line"><p>Zij liepen terug naar het huis.<br>De deur stond een stukje open.<br>Binnen klonken stemmen.</p></div>
+    <div class="line"><p>De Os stapte het huis binnen.<br>De steen lag onder de tafel.</p></div>
+    <div class="line"><p>Een kleinkind had er een veertje op gelegd — niet zilver, gewoon een veertje uit de tuin, gevonden in het gras die ochtend en bewaard tot het iemand kon laten zien.</p></div>
+    <div class="line"><p>De Os keek ernaar.<br>Hij glimlachte even, voor zichzelf.</p></div>
+    <div class="line"><p>Hij ging bij het vuur liggen.</p></div>
+    <div class="line"><p>De jonge os ging niet meteen zitten.<br>Hij stond bij het raam.<br>Hij keek naar buiten, naar het veld, naar de lucht boven het veld.</p></div>
+    <div class="line"><p>Boven het veld vloog niets.<br>Maar dat was niet erg.<br>De hemel hoefde niet vol om hemel te zijn.</p></div>
+  </div>
+</section>
+
+<section class="scene">
+  <div class="prose">
+    <div class="line"><p>De Os sloot zijn ogen.</p></div>
+    <div class="line"><p>Het huis hield hem.<br>De steen lag in zijn hoek.<br>De veer lag in haar hoek.<br>De maan stond in haar hoek.</p></div>
+    <div class="line"><p>En ergens, in een ander nest, hield iets anders een andere vogel.<br>Of niet.<br>Hij wist het niet.</p></div>
+    <div class="line"><p>Wat in zijn hart had gewoond, hoefde niet meer naast hem te lopen.<br>Het liep al lang in hem mee.</p></div>
+    <div class="line ending"><p>De wereld was groot genoeg.<br>Voor alles.</p></div>
+  </div>
+</section>
+
+<div class="story-end">
+  <div class="end-rule"></div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="script.js"></script>
+<script>
+  const music = document.getElementById('bg-music');
+  const btn = document.getElementById('music-btn');
+  const hint = document.getElementById('music-hint');
+  music.volume = 0.15;
+
+  function hideHint() { if (hint) hint.style.display = 'none'; }
+
+  let started = false;
+  function startMusic() {
+    if (started) return;
+    started = true;
+    hideHint();
+    music.play().catch(() => {});
+    document.removeEventListener('click', startMusic);
+    document.removeEventListener('keydown', startMusic);
+    window.removeEventListener('scroll', startMusic);
+  }
+
+  music.play().then(() => {
+    started = true;
+    hideHint();
+  }).catch(() => {
+    document.addEventListener('click', startMusic);
+    document.addEventListener('keydown', startMusic);
+    window.addEventListener('scroll', startMusic, { passive: true });
+  });
+
+  btn.addEventListener('click', () => {
+    hideHint();
+    if (music.paused) {
+      music.play().catch(() => {});
+      btn.classList.remove('muted');
+    } else {
+      music.pause();
+      btn.classList.add('muted');
+    }
+    started = true;
+  });
+</script>
 <script>
   if ('serviceWorker' in navigator) {
     window.addEventListener('load', () => {
