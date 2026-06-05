@@ -37,7 +37,7 @@
 
 <a class="site-link" href="index.html">← Terug</a>
 
-<audio id="bg-music" src="./audio/Philip%20Glass%20-%20Truman%20Sleeps.mp3" loop preload="auto"></audio>
+<audio id="bg-music" src="./audio/Graham%20Reynolds%20-%20Forgetting%20Little%20Things.mp3" loop preload="auto"></audio>
 
 <button class="music-btn" id="music-btn" aria-label="Muziek aan/uit">♪</button>
 <span class="music-hint" id="music-hint">tik voor muziek</span>
@@ -69,6 +69,7 @@
 <!-- ─── VERHAAL VIII ─── -->
 
 <section class="scene" id="story-8">
+  <img class="scene-img" src="../Illustrations/8/1.png" aria-hidden="true" alt="" />
   <div class="chapter">
     <p class="chapter-label">VIII</p>
     <h2 class="chapter-title">Het Nest dat Ademhaalde</h2>
@@ -111,6 +112,7 @@
 </section>
 
 <section class="scene">
+  <img class="scene-img" src="../Illustrations/8/2.png" aria-hidden="true" alt="" />
   <div class="prose">
     <div class="line"><p>De volgende ochtend, toen het licht over het nest viel, opende zij haar snavel.<br>Niet luid.<br>Maar ook niet zacht.<br>Een toon die zij in jaren niet had laten klinken.</p></div>
     <div class="line"><p>Eén van de jonge vogels hief zijn kop.<br>Hij keek naar haar.<br>Hij keek naar de hoge tak.<br>Toen, voorzichtig, opende ook hij zijn snavel.</p></div>
@@ -134,6 +136,7 @@
 </section>
 
 <section class="scene">
+  <img class="scene-img" src="../Illustrations/8/3.png" aria-hidden="true" alt="" />
   <div class="prose">
     <div class="line"><p>Het werd nacht.<br>De jonge vogels sliepen.<br>De wind viel.<br>De maan stond hoog boven de dennen.</p></div>
     <div class="line"><p>De Kraanvogel zat naast haar jongste kind.<br>Eén van hen werd wakker, even, en opende zijn snavel.</p></div>
@@ -156,6 +159,7 @@
 <!-- ─── VERHAAL IX ─── -->
 
 <section class="scene" id="story-9">
+  <img class="scene-img" src="../Illustrations/9/1.png" aria-hidden="true" alt="" />
   <div class="chapter">
     <p class="chapter-label">IX</p>
     <h2 class="chapter-title">De Hoek met de Open Deur</h2>
@@ -183,6 +187,7 @@
 </section>
 
 <section class="scene">
+  <img class="scene-img" src="../Illustrations/9/3.png" aria-hidden="true" alt="" />
   <div class="prose">
     <div class="line"><p>Op een avond in de late herfst stond hij bij de drempel.<br>Buiten was de lucht koud geworden.<br>Het rook naar natte bladeren.</p></div>
     <div class="line"><p>Hij dacht eraan om naar de hoek te lopen.<br>Hij wist eigenlijk niet waarom.<br>Hij had niets te bewaren.<br>Hij had niets te ontvluchten.</p></div>
@@ -194,6 +199,7 @@
 </section>
 
 <section class="scene">
+  <img class="scene-img" src="../Illustrations/9/4.png" aria-hidden="true" alt="" />
   <div class="prose">
     <div class="line"><p>De Os bleef even staan bij de zijkant van het huis.<br>Hij wist niet of hij iets moest zeggen.<br>Hij wist niet of het kalf naar de hoek mocht.</p></div>
     <div class="line"><p>Het was nog steeds zijn hoek.<br>Maar het kalf had er al jaren eerder gestaan, op een avond toen het nog klein was, en het had toen niets aangeraakt.</p></div>
@@ -221,6 +227,7 @@
 </section>
 
 <section class="scene">
+  <img class="scene-img" src="../Illustrations/9/6.png" aria-hidden="true" alt="" />
   <div class="prose">
     <div class="line"><p>Hij dacht aan al die jaren waarin hij hier alleen was geweest, omdat hij dacht dat alleen-zijn de enige manier was om zichzelf te zijn.</p></div>
     <div class="line"><p>Hij dacht aan de eerste avond dat dit kalf hier was gekomen.<br>Aan zijn schrik toen.<br>Aan de schoffel van zijn hoef waarmee hij stenen had willen verbergen die al lang gezien waren.<br>Aan zijn ja, eindelijk, omdat hij toen begreep dat verborgen blijven niet meer was dan een vorm van afwezigheid waar niemand naar vroeg.</p></div>
@@ -383,6 +390,11 @@
   const hint = document.getElementById('music-hint');
   music.volume = 0.15;
 
+  const music2 = new Audio('./audio/Kai%20Engel%20-%20Endless%20Story%20About%20Sun%20and%20Moon.mp3');
+  music2.volume = 0.15;
+  music2.loop = true;
+  music.addEventListener('ended', () => music2.play().catch(() => {}));
+
   function hideHint() { if (hint) hint.style.display = 'none'; }
 
   let started = false;
@@ -407,12 +419,14 @@
 
   btn.addEventListener('click', () => {
     hideHint();
-    if (music.paused) {
-      music.play().catch(() => {});
-      btn.classList.remove('muted');
-    } else {
+    const isPlaying = !music.paused || !music2.paused;
+    if (isPlaying) {
       music.pause();
+      music2.pause();
       btn.classList.add('muted');
+    } else {
+      (music2.currentTime > 0 ? music2 : music).play().catch(() => {});
+      btn.classList.remove('muted');
     }
     started = true;
   });
