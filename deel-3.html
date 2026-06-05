@@ -390,10 +390,10 @@
   const music = document.getElementById('bg-music');
   const btn = document.getElementById('music-btn');
   const hint = document.getElementById('music-hint');
-  music.volume = 0.15;
+  music.volume = 0.07;
 
   const music2 = new Audio('./audio/Kai%20Engel%20-%20Endless%20Story%20About%20Sun%20and%20Moon.mp3');
-  music2.volume = 0.15;
+  music2.volume = 0.07;
   music2.loop = true;
   music.addEventListener('ended', () => music2.play().catch(() => {}));
 
