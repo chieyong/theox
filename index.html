@@ -231,13 +231,13 @@
       </div>
     </a>
 
-    <div class="story-card story-card--soon">
+    <a id="deel-3-card" class="story-card story-card--soon" aria-disabled="true">
       <div class="card-content">
         <p class="card-deel">Deel III</p>
         <h2 class="card-title" id="deel-3-title" style="display:none">Na de Vleugels</h2>
         <p class="card-soon-label" id="deel-3-label">Binnenkort</p>
       </div>
-    </div>
+    </a>
 
   </div>
 
@@ -283,6 +283,31 @@
         document.getElementById('deel-3-title').style.display = '';
         document.getElementById('deel-3-label').textContent = '10 juni · 10:00';
         clearInterval(interval);
+      }
+    }
+
+    checkUnlock();
+    var interval = setInterval(checkUnlock, 30000);
+  })();
+
+  (function () {
+    var publishTime = new Date('2026-06-10T10:00:00');
+    var card = document.getElementById('deel-3-card');
+    var label = document.getElementById('deel-3-label');
+    var title = document.getElementById('deel-3-title');
+
+    function checkUnlock() {
+      if (new Date() >= publishTime) {
+        card.href = 'deel-3.html';
+        card.removeAttribute('aria-disabled');
+        card.classList.remove('story-card--soon');
+        title.style.display = '';
+        label.textContent = 'Lees →';
+        label.className = 'card-cta';
+        clearInterval(interval);
+      } else {
+        title.style.display = '';
+        label.textContent = '10 juni · 10:00';
       }
     }
 
